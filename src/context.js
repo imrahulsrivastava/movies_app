@@ -31,7 +31,11 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     let clearOutTimer = setTimeout(() => {
-      getMovies(`${ApiUrl}&s=${searchQuery}`);
+      if (searchQuery) {
+        getMovies(`${ApiUrl}&s=${searchQuery}`);
+      } else {
+        getMovies(ApiUrl);
+      }
     }, 800);
     return () => clearTimeout(clearOutTimer);
   }, [searchQuery]); // Re-run when searchQuery changes
