@@ -8,13 +8,12 @@ import Error from "./Error";
 const App = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="movies/:id" element={<SingleMovie />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies/:id" element={<SingleMovie />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </BrowserRouter>
-    
   );
 };
 

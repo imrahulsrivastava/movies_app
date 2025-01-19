@@ -5,7 +5,7 @@ const Search = () => {
   const { searchQuery, setSearchQuery, showError } = useContext(appContext);
   return (
     <>
-      <form action="#" onSubmit={(e)=>e.preventDefault()}>
+      <form action="#" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           placeholder="Search movies..."
@@ -14,7 +14,11 @@ const Search = () => {
         />
       </form>
       <div className="card-error">
-        <p>{showError.show && showError.msg === "Incorrect IMDb ID." ? showError.msg ="" : showError.msg }</p>
+        <p>
+          {showError.show && showError.msg === "Incorrect IMDb ID."
+            ? (showError.msg = "")
+            : showError.msg}
+        </p>
       </div>
     </>
   );
