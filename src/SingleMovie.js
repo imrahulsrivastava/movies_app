@@ -9,7 +9,6 @@ const SingleMovie = () => {
 
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [showError, setShowError] = useState({ show: "false", msg: "" });
 
   const getMovies = async (url) => {
     setIsLoading(true);
@@ -22,10 +21,7 @@ const SingleMovie = () => {
       console.log(data);
       if (data.Response === "True") {
         setIsLoading(false);
-        setShowError({ show: false, msg: "" });
         setMovies(data);
-      } else {
-        setShowError({ show: true, msg: data.Error });
       }
     } catch (error) {
       console.log(error);
